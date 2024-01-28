@@ -1,52 +1,70 @@
-html {
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Roboto', sans-serif;
-}
-
-body {
+    background-color: #ECEFF1; /* Color de fondo ligeramente azulado */
+  }
+  
+  .container {
+    box-sizing: border-box;
     width: 90%;
-    max-width: 600px;
-    margin: 20px auto;
-    background-color: #FAFAFA;
-    color: #212121;
-}
-
-h1 {
-    color: #1976D2; /* Color azul de Material Design */
-    font-size: 24px;
-    font-weight: 400;
-}
-
-.form {
-    margin-bottom: 20px;
-    background: white;
+    max-width: 400px;
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    border-radius: 2px;
-}
-
-.form input[type="number"],
-.form input[type="submit"] {
-    height: 36px;
-    border: 1px solid #BDBDBD; /* Gris claro para el borde */
-    margin: 10px 0;
-    padding: 0 10px;
-    border-radius: 2px;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
-    transition: box-shadow 0.3s;
-}
-
-.form input[type="number"]:focus,
-.form input[type="submit"]:hover {
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-}
-
-.lastResult {
-    color: white;
-    background-color: #1976D2; /* Azul de Material Design */
+    margin: 20px;
+    background: #FFFFFF; /* Fondo blanco para el contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: inset 0 0 10px #B0BEC5; /* Sombra interior para el efecto de profundidad */
+    text-align: center;
+  }
+  
+  h1 {
+    color: #1976D2;
+    margin-bottom: 24px;
+  }
+  
+  p {
+    margin-bottom: 24px;
+    color: #37474F; /* Color de texto oscuro */
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form input[type="number"] {
+    width: calc(100% - 20px); /* 100% del contenedor menos el padding */
     padding: 10px;
-    border-radius: 2px;
-}
-
-.resultParas {
-    margin-top: 20px;
-}
+    margin-bottom: 16px;
+    border: 1px solid #B0BEC5;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .form input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #1976D2;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form input[type="submit"]:hover {
+    background-color: #1565C0;
+  }
+  
+  .resultParas p {
+    padding: 10px 0;
+    margin: 0;
+    background: #CFD8DC; /* Color de fondo para los resultados */
+    border-radius: 4px;
+    box-shadow: inset 0 0 5px #B0BEC5; /* Sombra interior para los resultados */
+  }
+  

@@ -1,33 +1,24 @@
 <!DOCTYPE html>
-<html lang="en-US">
-
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <title>Adivina el Número</title>
-    <!-- Enlace a la hoja de estilos -->
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <h1>Adivina el Número</h1>
-
-    <p>Hemos seleccionado un número aleatorio entre 1 y 100. Veamos si puedes adivinarlo en 10 turnos o menos. Te
-        diremos si tu suposición fue demasiado alta o demasiado baja.</p>
-
-    <div class="form">
-        <label for="guessField">Ingresa un número: </label>
-        <input type="number" min="1" max="100" required id="guessField" class="guessField">
-        <input type="submit" value="Enviar Número" class="guessSubmit">
+    <div class="container">
+        <h1>Adivina el Número</h1>
+        <p>Hemos seleccionado un número aleatorio entre 1 y 100. Veamos si puedes adivinarlo en 10 turnos o menos. Te diremos si tu suposición fue demasiado alta o demasiado baja.</p>
+        <div class="form">
+            <input type="number" id="guessField" class="guessField" min="1" max="100" required>
+            <input type="submit" value="Enviar Número" class="guessSubmit">
+        </div>
+        <div class="resultParas">
+            <p class="guesses"></p>
+            <p class="lastResult"></p>
+            <p class="lowOrHi"></p>
+        </div>
     </div>
-
-    <div class="resultParas">
-        <p class="guesses"></p>
-        <p class="lastResult"></p>
-        <p class="lowOrHi"></p>
-    </div>
-
     <script src="main.js"></script>
-
 </body>
-
 </html>
