@@ -24,7 +24,7 @@ Este vendría siendo basicamente el loop del juego, podemos ver en este gif el j
 
 El juego fue programado con JavaScript usando el framework Phaser, el cual nos permite crear juegos de manera sencilla. Debemos tener el archivo phaser.min.js en la carpeta del proyecto para poder usarlo y enlazarlo en el archivo index.html junto con el archivo .js del juego y asi poder disponer de las funciones del framework.
 
-![Carpetas](/capturas/carpetas.png)
+![Carpetas](capturas/carpetas.png)
 
 ### index.html
 
