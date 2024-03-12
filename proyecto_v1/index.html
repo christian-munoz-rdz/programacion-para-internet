@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Predicción de Diabetes</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .container { max-width: 600px; margin: auto; }
+        input, button { width: 100%; padding: 10px; margin: 10px 0; }
+        button { background-color: #4CAF50; color: white; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Formulario de Predicción de Diabetes</h2>
+        <input type="number" id="embarazos" placeholder="Número de embarazos">
+        <input type="number" id="glucosa" placeholder="Nivel de glucosa">
+        <input type="number" id="presion" placeholder="Presión arterial diastólica">
+        <input type="number" id="espesor" placeholder="Espesor del pliegue de la piel del tríceps">
+        <input type="number" id="insulina" placeholder="Nivel de insulina en suero">
+        <input type="number" id="bmi" placeholder="Índice de masa corporal">
+        <input type="number" id="pedigree" placeholder="Función del pedigrí de diabetes">
+        <input type="number" id="edad" placeholder="Edad">
+        <button onclick="predecirDiabetes()">Predecir Diabetes</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        async function predecirDiabetes() {
+            const datos = {
+                embarazos: document.getElementById('embarazos').value,
+                glucosa: document.getElementById('glucosa').value,
+                presion_arterial: document.getElementById('presion').value,
+                espesor_triceps: document.getElementById('espesor').value,
+                insulina: document.getElementById('insulina').value,
+                bmi: document.getElementById('bmi').value,
+                diabetes_pedigree_function: document.getElementById('pedigree').value,
+                edad: document.getElementById('edad').value,
+            };
+
+            const respuesta = await fetch('http://127.0.0.1:8000/predict/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(datos),
+            });
+
+            const resultado = await respuesta.json();
+
+            document.getElementById('resultado').textContent = `Probabilidad de diabetes: ${resultado.probabilidad * 100}%.`;
+        }
+    </script>
+</body>
+</html>
